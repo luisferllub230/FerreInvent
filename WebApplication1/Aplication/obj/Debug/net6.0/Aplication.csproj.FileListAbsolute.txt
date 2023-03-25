@@ -1,0 +1,15 @@
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\bin\Debug\net6.0\Aplication.deps.json
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\bin\Debug\net6.0\Aplication.dll
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\bin\Debug\net6.0\Aplication.pdb
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\bin\Debug\net6.0\DataBase.dll
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\bin\Debug\net6.0\DataBase.pdb
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\obj\Debug\net6.0\Aplication.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\obj\Debug\net6.0\Aplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\obj\Debug\net6.0\Aplication.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\obj\Debug\net6.0\Aplication.AssemblyInfo.cs
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\obj\Debug\net6.0\Aplication.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\obj\Debug\net6.0\Aplication.csproj.CopyComplete
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\obj\Debug\net6.0\Aplication.dll
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\obj\Debug\net6.0\refint\Aplication.dll
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\obj\Debug\net6.0\Aplication.pdb
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\Aplication\obj\Debug\net6.0\ref\Aplication.dll

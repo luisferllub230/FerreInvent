@@ -1,0 +1,12 @@
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\StockApp.Domain\bin\Debug\net6.0\StockApp.Core.Domain.deps.json
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\StockApp.Domain\bin\Debug\net6.0\StockApp.Core.Domain.dll
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\StockApp.Domain\bin\Debug\net6.0\StockApp.Core.Domain.pdb
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\StockApp.Domain\obj\Debug\net6.0\StockApp.Core.Domain.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\StockApp.Domain\obj\Debug\net6.0\StockApp.Core.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\StockApp.Domain\obj\Debug\net6.0\StockApp.Core.Domain.AssemblyInfoInputs.cache
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\StockApp.Domain\obj\Debug\net6.0\StockApp.Core.Domain.AssemblyInfo.cs
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\StockApp.Domain\obj\Debug\net6.0\StockApp.Core.Domain.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\StockApp.Domain\obj\Debug\net6.0\StockApp.Core.Domain.dll
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\StockApp.Domain\obj\Debug\net6.0\refint\StockApp.Core.Domain.dll
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\StockApp.Domain\obj\Debug\net6.0\StockApp.Core.Domain.pdb
+C:\Users\HP\source\repos\FerreInvent\WebApplication1\StockApp.Domain\obj\Debug\net6.0\ref\StockApp.Core.Domain.dll

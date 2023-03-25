@@ -1,0 +1,38 @@
+﻿@using StockApp.Core.Application.ViewModel.Products;
+@model List<StockApp.Core.Application.ViewModel.Products.ProductViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="mb-5 mt-2 d-flex flex-row-reverse">
+    <a asp-controller="Home" asp-action="Create" class="btn btn-outline-success">create new product</a>
+</div>
+@if(Model.Count == null || Model.Count == 0)
+{
+    <h2>
+        there arent products
+    </h2>
+} else {
+
+     <div class="row">
+        @foreach (ProductViewModel i  in Model)
+        {
+
+            <div class="card bg-dark border border-5 border-primary col-12 col-md-4 mx-2" style="width: 18rem;">
+                <img class="card-img-top" src="@i.productImg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@i.productName</h5>
+                    <p class="card-text">@i.productDescription</p>
+                    <span class="">$ @i.productPrice</span>
+
+                    <div class="d-flex justify-content-between mt-3">
+                        <a class="btn btn-outline-warning " asp-controller="Home" asp-action="Edit" asp-route-id="@i.id">edit</a>
+                        <a class="btn btn-outline-danger " asp-controller="Home" asp-action="Delete" asp-route-id="@i.id">delete</a>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+}
+

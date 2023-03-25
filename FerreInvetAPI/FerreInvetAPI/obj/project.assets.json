@@ -490,6 +490,29 @@
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
         }
+      },
+      "Source.Core.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Source.Core.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Source.Core.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Source.Core.Application.dll": {}
+        }
+      },
+      "Source.Core.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Source.Core.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Source.Core.Domain.dll": {}
+        }
       }
     }
   },
@@ -1475,12 +1498,23 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Source.Core.Application/1.0.0": {
+      "type": "project",
+      "path": "../Source.Core.Application/Source.Core.Application.csproj",
+      "msbuildProject": "../Source.Core.Application/Source.Core.Application.csproj"
+    },
+    "Source.Core.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Source.Core.Domain/Source.Core.Domain.csproj",
+      "msbuildProject": "../Source.Core.Domain/Source.Core.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.AspNetCore.Mvc.Versioning >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0-preview.2.23128.3",
+      "Source.Core.Application >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0",
       "Swashbuckle.AspNetCore.Swagger >= 6.5.0"
     ]
@@ -1516,7 +1550,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\HP\\source\\repos\\FerreInvent\\FerreInvetAPI\\Source.Core.Application\\Source.Core.Application.csproj": {
+              "projectPath": "C:\\Users\\HP\\source\\repos\\FerreInvent\\FerreInvetAPI\\Source.Core.Application\\Source.Core.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
