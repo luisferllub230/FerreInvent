@@ -7,13 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Context\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FerreInvetAPI\FerreInvetAPI.csproj" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.15" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="6.0.2-mauipre.1.22102.15" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Source.Core.Application\Source.Core.Application.csproj" />
+    <ProjectReference Include="..\Source.Core.Domain\Source.Core.Domain.csproj" />
   </ItemGroup>
 
 </Project>
