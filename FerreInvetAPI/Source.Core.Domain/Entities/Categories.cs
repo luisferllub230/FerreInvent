@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Source.Core.Domain.Common;
 
 namespace Source.Core.Domain.Entities
 {
-    public class Categories
+    public class Categories : AuditableBaseEntity
     {
-        public int id { get; set; }
+        
         public string categoryName { get; set; }
 
         //Inventory

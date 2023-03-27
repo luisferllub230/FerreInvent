@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Source.Core.Domain.Common;
 using Source.Core.Domain.Entities;
 
 namespace Source.Infraestructure.Persistence.Context
@@ -13,6 +14,28 @@ namespace Source.Infraestructure.Persistence.Context
         public DbSet<Sales> sales { get; set; }
         public DbSet<Inventory> inventories { get; set; }
         public DbSet<Custumers> custumers { get; set; }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken()) 
+        {
+
+            foreach (var entry in ChangeTracker.Entries<AuditableBaseEntity>()) 
+            {
+                switch (entry.State) 
+                {
+                    case EntityState.Added:
+                        entry.Entity.createBy = "deafaultUser";
+                        entry.Entity.created = DateTime.Now;
+                        break;
+
+                    case EntityState.Modified:
+                        entry.Entity.lastModifiedBy = "deafaultUser";
+                        entry.Entity.lastMoified = DateTime.Now;
+                        break;
+                }
+            }
+
+            return base.SaveChangesAsync(cancellationToken);
+        }
 
         protected override void OnModelCreating(ModelBuilder builder) 
         {
