@@ -37,6 +37,18 @@ namespace Source.Infraestructure.Persistence.Repositories
             return await _aplicationContext.Set<Entity>().ToListAsync();
         }
 
+        public async Task<List<Entity>> GetAllWhitIncluedeRepository(List<string> properties)
+        {
+            var query = _aplicationContext.Set<Entity>().AsQueryable();
+
+            foreach (string property in properties) 
+            {
+                query.Include(property);
+            }
+
+            return await query.ToListAsync();
+        }
+
         public async Task<Entity> GetByIdRepository(int id) 
         {
             return await _aplicationContext.Set<Entity>().FindAsync(id); 

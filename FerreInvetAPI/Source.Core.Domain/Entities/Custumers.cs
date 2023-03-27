@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Source.Core.Domain.Common;
 
 namespace Source.Core.Domain.Entities
 {
-    public class Custumers
+    public class Custumers : AuditableBaseEntity
     {
-        public int id { get; set; }
+        
         public string custumerName { get; set; }
         public string custumerAddress { get; set; }
         public string custumerEmail { get; set; }
