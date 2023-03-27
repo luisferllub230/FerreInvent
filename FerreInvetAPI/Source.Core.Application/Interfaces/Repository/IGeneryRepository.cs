@@ -9,5 +9,6 @@ namespace Source.Core.Application.Interfaces.Repository
         public Task DeleteRepository(Entity entity);
         public Task<List<Entity>> GetAllRepository();
         public Task<Entity> GetByIdRepository(int id);
+        public Task<List<Entity>> GetAllWhitIncluedeRepository(List<string> properties);
     }
 }
