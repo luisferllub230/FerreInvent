@@ -4,6 +4,7 @@ using Source.Infraestructure.Persistence;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSession();
 builder.Services.AddPersistenceInfrastruture(builder.Configuration);
 builder.Services.AddApplicationContext();
 builder.Services.AddControllers();
@@ -21,6 +22,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseSession();
 
 app.UseHttpsRedirection();
 
