@@ -512,6 +512,9 @@
       },
       "Source.Core.Application/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.15",
+          "Microsoft.EntityFrameworkCore.InMemory": "6.0.15",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "6.0.2-mauipre.1.22102.15",
           "Source.Core.Domain": "1.0.0"
         },
         "runtime": {
