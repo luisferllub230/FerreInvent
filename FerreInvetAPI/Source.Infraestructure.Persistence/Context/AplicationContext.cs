@@ -25,6 +25,8 @@ namespace Source.Infraestructure.Persistence.Context
                     case EntityState.Added:
                         entry.Entity.createBy = "deafaultUser";
                         entry.Entity.created = DateTime.Now;
+                        entry.Entity.lastModifiedBy = "deafaultUser";
+                        entry.Entity.lastMoified = DateTime.Now;
                         break;
 
                     case EntityState.Modified:

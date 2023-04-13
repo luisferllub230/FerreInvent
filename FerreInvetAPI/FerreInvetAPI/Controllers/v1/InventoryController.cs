@@ -42,6 +42,7 @@ namespace FerreInvetAPI.Controllers.v1
             return Ok(inventory);
         }
 
+        //TODO: NEED DTO
         [HttpPost]
         public async Task<IActionResult> Post(Inventory inventory)
         {
@@ -51,6 +52,7 @@ namespace FerreInvetAPI.Controllers.v1
             return NoContent();
         }
 
+        //TODO: NEED DTO
         [HttpPut]
         public async Task<IActionResult> Put(Inventory inventory) 
         {
