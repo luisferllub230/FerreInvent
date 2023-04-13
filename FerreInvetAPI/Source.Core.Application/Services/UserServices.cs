@@ -14,15 +14,27 @@ namespace Source.Core.Application.Services
             _userRepository = repository;
         }
 
-
-        public async Task<List<User>> getAllServices()
+        //TODO: IMPLEMENT PASSWORD ENCRIPTED 
+        public async Task<(UserDTO, ErrorMessageDTO)> getLoggingService(string nickNameOrEmail, string password) 
         {
-            return await _userRepository.GetAllRepository();
-        }
+            var errorMessage = new ErrorMessageDTO();
+            var user = await _userRepository.GetByUserNickNameOrEmail(nickNameOrEmail);
 
-        public async Task<User> getByIdServices(int id)
-        {
-            return await _userRepository.GetByIdRepository(id);
+            if (user == null || user.userPassword != password) 
+            {
+                errorMessage.IsError = true;
+                errorMessage.ErrorMessage = "ERROR: Check your email or password";
+                return (null, errorMessage);
+            }
+
+            var userDTO = new UserDTO();
+            userDTO.position = user.position;
+            userDTO.Id = user.id;
+            userDTO.name = user.name;
+            userDTO.userEmail = user.userEmail;
+            userDTO.userNickname = user.userNickname;
+
+            return (userDTO, errorMessage);
         }
 
         public async Task<ErrorMessageDTO> postCreateServices(UserRegisterDTO userDTO)
@@ -55,19 +67,6 @@ namespace Source.Core.Application.Services
             await _userRepository.AddRepository(user);
 
             return errorMessage;
-        }
-
-        //public async Task<Inventory> putUpdateServices(Inventory inventory)
-       // {
-           // await _userRepository.UpdateRepository(inventory);
-
-           // return await _userRepository.GetByIdRepository(inventory.id);
-        //}
-
-        public async Task deleteServices(int id)
-        {
-            var repository = await _userRepository.GetByIdRepository(id);
-            await _userRepository.DeleteRepository(repository);
         }
     }
 }

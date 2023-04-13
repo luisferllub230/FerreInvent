@@ -10,5 +10,6 @@ namespace Source.Core.Application.Interfaces.Services
     public interface IUserServices
     {
         public Task<ErrorMessageDTO> postCreateServices(UserRegisterDTO userDTO);
+        public Task<(UserDTO, ErrorMessageDTO)> getLoggingService(string nickNameOrEmail, string password);
     }
 }

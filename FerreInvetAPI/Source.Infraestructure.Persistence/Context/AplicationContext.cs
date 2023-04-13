@@ -84,6 +84,11 @@ namespace Source.Infraestructure.Persistence.Context
                 .IsRequired();
 
             builder.Entity<User>()
+                .Property(user => user.userEmail)
+                .HasMaxLength(100)
+                .IsRequired();
+
+            builder.Entity<User>()
                 .Property(user => user.userPassword)
                 .HasMaxLength(500)
                 .IsRequired();

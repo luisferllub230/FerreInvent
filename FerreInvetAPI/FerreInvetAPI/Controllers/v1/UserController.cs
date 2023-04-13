@@ -17,10 +17,16 @@ namespace FerreInvetAPI.Controllers.v1
 
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(string nickNameOrEmail, string password)
         {
+            var userValidation =  await _userServices.getLoggingService(nickNameOrEmail, password);
 
-            return NoContent();
+            if (userValidation.Item2.IsError) 
+            {
+                return BadRequest(userValidation.Item2);
+            }
+
+            return Ok(userValidation.Item1);
         }
 
 
@@ -33,7 +39,7 @@ namespace FerreInvetAPI.Controllers.v1
             if (isUserCreate.IsError) 
             {
                 //TODO: NEED TO SPECIFY THE ERROR
-                return BadRequest();
+                return BadRequest(isUserCreate);
             }
 
             return NoContent();
