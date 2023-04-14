@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Source.Core.Application.DTO;
+using Source.Core.Application.Helpers;
 using Source.Core.Application.Interfaces.Services;
 using Source.Core.Domain.Entities;
 
@@ -26,11 +27,12 @@ namespace FerreInvetAPI.Controllers.v1
                 return BadRequest(userValidation.Item2);
             }
 
+            //TODO: VALIDATED SESSION FOR ALL ENDPOINTS
+            //HttpContext.Session.Set<UserDTO>("userDTO", userValidation.Item1);
             return Ok(userValidation.Item1);
         }
 
 
-        //TODO: NEED DTO
         [HttpPost]
         public async Task<IActionResult> Post(UserRegisterDTO user)
         {
@@ -38,7 +40,6 @@ namespace FerreInvetAPI.Controllers.v1
 
             if (isUserCreate.IsError) 
             {
-                //TODO: NEED TO SPECIFY THE ERROR
                 return BadRequest(isUserCreate);
             }
 
