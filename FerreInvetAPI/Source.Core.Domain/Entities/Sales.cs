@@ -16,5 +16,7 @@ namespace Source.Core.Domain.Entities
         //INVENTORY
         public int inventoryID { get; set; }
         public Inventory inventory { get; set; }
+
+        public ICollection<Sales> sales { get; set; }
     }
 }

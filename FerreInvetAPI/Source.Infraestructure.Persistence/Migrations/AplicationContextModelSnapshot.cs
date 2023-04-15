@@ -155,6 +155,9 @@ namespace Source.Infraestructure.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
 
+                    b.Property<int?>("Salesid")
+                        .HasColumnType("int");
+
                     b.Property<string>("createBy")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -185,6 +188,8 @@ namespace Source.Infraestructure.Persistence.Migrations
                         .HasColumnType("real");
 
                     b.HasKey("id");
+
+                    b.HasIndex("Salesid");
 
                     b.HasIndex("custumerID");
 
@@ -225,6 +230,11 @@ namespace Source.Infraestructure.Persistence.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("userEmail")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("userNickname")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -253,6 +263,10 @@ namespace Source.Infraestructure.Persistence.Migrations
 
             modelBuilder.Entity("Source.Core.Domain.Entities.Sales", b =>
                 {
+                    b.HasOne("Source.Core.Domain.Entities.Sales", null)
+                        .WithMany("sales")
+                        .HasForeignKey("Salesid");
+
                     b.HasOne("Source.Core.Domain.Entities.Custumers", "custumer")
                         .WithMany("sales")
                         .HasForeignKey("custumerID")
@@ -281,6 +295,11 @@ namespace Source.Infraestructure.Persistence.Migrations
                 });
 
             modelBuilder.Entity("Source.Core.Domain.Entities.Inventory", b =>
+                {
+                    b.Navigation("sales");
+                });
+
+            modelBuilder.Entity("Source.Core.Domain.Entities.Sales", b =>
                 {
                     b.Navigation("sales");
                 });

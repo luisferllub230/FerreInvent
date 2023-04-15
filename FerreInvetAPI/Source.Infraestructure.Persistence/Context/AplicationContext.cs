@@ -68,6 +68,11 @@ namespace Source.Infraestructure.Persistence.Context
                 .HasMany(custumer => custumer.sales)
                 .WithOne(sales => sales.custumer)
                 .HasForeignKey(sales => sales.custumerID);
+
+            builder.Entity<Inventory>()
+                .HasMany(inventory => inventory.sales)
+                .WithOne(sales => sales.inventory)
+                .HasForeignKey(sales => sales.inventoryID);
             #endregion
 
             #region "fluent api configarations properties"
@@ -81,6 +86,11 @@ namespace Source.Infraestructure.Persistence.Context
             builder.Entity<User>()
                 .Property(user => user.userNickname)
                 .HasMaxLength(50)
+                .IsRequired();
+
+            builder.Entity<User>()
+                .Property(user => user.userEmail)
+                .HasMaxLength(100)
                 .IsRequired();
 
             builder.Entity<User>()

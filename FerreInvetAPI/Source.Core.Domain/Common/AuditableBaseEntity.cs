@@ -1,8 +1,10 @@
-﻿namespace Source.Core.Domain.Common
+﻿using Source.Core.Domain.ICommon;
+
+namespace Source.Core.Domain.Common
 
 
 {
-    public class AuditableBaseEntity
+    public class AuditableBaseEntity : IdEntityCommon
     {
         public virtual int id { get; set; }
         public string createBy { get; set; }

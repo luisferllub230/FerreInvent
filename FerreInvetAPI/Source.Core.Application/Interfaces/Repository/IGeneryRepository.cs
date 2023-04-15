@@ -1,5 +1,7 @@
 ﻿
 
+using Source.Core.Domain.ICommon;
+
 namespace Source.Core.Application.Interfaces.Repository
 {
     public interface IGeneryRepository<Entity> where Entity : class
@@ -10,5 +12,7 @@ namespace Source.Core.Application.Interfaces.Repository
         public Task<List<Entity>> GetAllRepository();
         public Task<Entity> GetByIdRepository(int id);
         public Task<List<Entity>> GetAllWhitIncluedeRepository(List<string> properties);
+        public Task<Entity> GetByIdWhitIncludeRepository<Entity>(int id, List<string> properties) where Entity : class, IdEntityCommon;
+
     }
 }

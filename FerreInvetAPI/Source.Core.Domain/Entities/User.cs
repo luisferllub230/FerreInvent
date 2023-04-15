@@ -14,5 +14,6 @@ namespace Source.Core.Domain.Entities
         public string position { get; set; }
         public string userNickname { get; set; }
         public string userPassword { get; set; }
+        public string userEmail { get; set; }
     }
 }

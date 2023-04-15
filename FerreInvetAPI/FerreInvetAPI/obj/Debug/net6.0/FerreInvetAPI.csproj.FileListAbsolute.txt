@@ -76,3 +76,4 @@ C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\obj\Debug\net6.
 C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\obj\Debug\net6.0\FerreInvetAPI.pdb
 C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\obj\Debug\net6.0\FerreInvetAPI.genruntimeconfig.cache
 C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\obj\Debug\net6.0\ref\FerreInvetAPI.dll
+C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
