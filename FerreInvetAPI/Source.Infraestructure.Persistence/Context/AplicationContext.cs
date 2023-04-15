@@ -68,6 +68,11 @@ namespace Source.Infraestructure.Persistence.Context
                 .HasMany(custumer => custumer.sales)
                 .WithOne(sales => sales.custumer)
                 .HasForeignKey(sales => sales.custumerID);
+
+            builder.Entity<Inventory>()
+                .HasMany(inventory => inventory.sales)
+                .WithOne(sales => sales.inventory)
+                .HasForeignKey(sales => sales.inventoryID);
             #endregion
 
             #region "fluent api configarations properties"

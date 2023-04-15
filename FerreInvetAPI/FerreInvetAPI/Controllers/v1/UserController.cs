@@ -45,8 +45,5 @@ namespace FerreInvetAPI.Controllers.v1
 
             return NoContent();
         }
-
-
-        
     }
 }

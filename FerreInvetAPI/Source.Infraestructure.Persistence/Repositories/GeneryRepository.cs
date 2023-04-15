@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Source.Core.Application.Interfaces.Repository;
+using Source.Core.Domain.ICommon;
 using Source.Infraestructure.Persistence.Context;
 
 namespace Source.Infraestructure.Persistence.Repositories
@@ -43,10 +44,22 @@ namespace Source.Infraestructure.Persistence.Repositories
 
             foreach (string property in properties) 
             {
-                query.Include(property);
+                query = query.Include(property);
             }
 
             return await query.ToListAsync();
+        }
+
+        public async Task<Entity> GetByIdWhitIncludeRepository<Entity>(int id, List<string> properties) where Entity : class, IdEntityCommon
+        {
+            var query = _aplicationContext.Set<Entity>().Where(e => e.id == id).AsQueryable();
+
+            foreach (string property in properties)
+            {
+                query = query.Include(property);
+            }
+
+            return query.FirstOrDefault();
         }
 
         public async Task<Entity> GetByIdRepository(int id) 

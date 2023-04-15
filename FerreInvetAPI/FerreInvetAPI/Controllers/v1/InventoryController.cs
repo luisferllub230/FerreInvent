@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Source.Core.Application.DTO;
 using Source.Core.Application.Interfaces.Services;
 using Source.Core.Domain.Entities;
 
@@ -19,14 +20,14 @@ namespace FerreInvetAPI.Controllers.v1
         [HttpGet]
         public async Task<IActionResult> get()
         {
-            var inventories = await _services.getAllServices();
+            var isInventory = await _services.getAllServices();
 
-            if (inventories == null || inventories.Count == 0)
+            if (isInventory.Item2.IsError)
             {
-                return NotFound();
+                return NotFound(isInventory.Item2);
             }
 
-            return Ok(inventories);
+            return Ok(isInventory.Item1);
         }
 
         [HttpGet("{id}")]
@@ -34,36 +35,36 @@ namespace FerreInvetAPI.Controllers.v1
         {
             var inventory = await _services.getByIdServices(id);
 
-            if (inventory == null)
+            if (inventory.Item2.IsError)
             {
-                return NotFound();
+                return NotFound(inventory.Item2);
             }
 
-            return Ok(inventory);
+            return Ok(inventory.Item1);
         }
 
-        //TODO: NEED DTO
         [HttpPost]
-        public async Task<IActionResult> Post(Inventory inventory)
+        public async Task<IActionResult> Post(SaveInventoryDTO saveInventoryDTO)
         {
-            //TODO: NEED VALIDATION
-            await _services.postCreateServices(inventory);
-
+            await _services.postCreateServices(saveInventoryDTO);
             return NoContent();
         }
 
         //TODO: NEED DTO
         [HttpPut]
-        public async Task<IActionResult> Put(Inventory inventory) 
+        public async Task<IActionResult> Put(SaveInventoryDTO saveInventoryDTO) 
         {
-            if (inventory.id == null || inventory.id <= 0)
+            var error = new ErrorMessageDTO();
+
+            if (saveInventoryDTO == null || saveInventoryDTO.id <= 0)
             {
-                return BadRequest();
+                error.IsError = true;
+                error.ErrorMessage = "not inventory id or inventory data";
+                return BadRequest(error);
             }
             
-            var newInventory = await _services.putUpdateServices(inventory);
-
-            return Ok(newInventory);
+            await _services.putUpdateServices(saveInventoryDTO);
+            return NoContent();
         }
 
         [HttpDelete("{id}")]
