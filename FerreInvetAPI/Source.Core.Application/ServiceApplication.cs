@@ -15,6 +15,7 @@ namespace Source.Core.Application
             #region services
             services.AddTransient<IInventoryServices, InventoryServices>();
             services.AddTransient<IUserServices, UserServices>();
+            services.AddTransient<ISalesServices, SalesServices>();
             #endregion
         }
     }

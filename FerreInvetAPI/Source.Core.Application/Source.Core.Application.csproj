@@ -19,4 +19,8 @@
     <ProjectReference Include="..\Source.Core.Domain\Source.Core.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTO\Categories\" />
+  </ItemGroup>
+
 </Project>

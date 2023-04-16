@@ -1,4 +1,5 @@
-﻿using Source.Core.Application.DTO;
+﻿using Source.Core.Application.DTO.ErrorMessage;
+using Source.Core.Application.DTO.User;
 using Source.Core.Application.Interfaces.Repository;
 using Source.Core.Application.Interfaces.Services;
 using Source.Core.Domain.Entities;
@@ -29,7 +30,7 @@ namespace Source.Core.Application.Services
 
             var userDTO = new UserDTO();
             userDTO.position = user.position;
-            userDTO.Id = user.id;
+            userDTO.id = user.id;
             userDTO.name = user.name;
             userDTO.userEmail = user.userEmail;
             userDTO.userNickname = user.userNickname;

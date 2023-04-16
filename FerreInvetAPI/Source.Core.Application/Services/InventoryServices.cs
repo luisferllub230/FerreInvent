@@ -1,4 +1,5 @@
-﻿using Source.Core.Application.DTO;
+﻿using Source.Core.Application.DTO.ErrorMessage;
+using Source.Core.Application.DTO.Inventory;
 using Source.Core.Application.Interfaces.Repository;
 using Source.Core.Application.Interfaces.Services;
 using Source.Core.Domain.Entities;
@@ -74,7 +75,6 @@ namespace Source.Core.Application.Services
 
         public async Task postCreateServices(SaveInventoryDTO saveInventoryDTO)
         {
-            //TODO: validate the categoryID
             var inventory = new Inventory();
             inventory.inventoryName = saveInventoryDTO.inventoryName;
             inventory.quantity = saveInventoryDTO.quantity;

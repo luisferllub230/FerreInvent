@@ -1,34 +1,35 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Source.Core.Application.DTO.ErrorMessage;
 using Source.Core.Application.DTO.Inventory;
+using Source.Core.Application.DTO.Sales;
 using Source.Core.Application.Interfaces.Services;
 using Source.Core.Domain.Entities;
 
 namespace FerreInvetAPI.Controllers.v1
 {
     [ApiVersion("1.0")]
-    public class InventoryController : BaseAapiController
+    public class SalesController : BaseAapiController
     {
 
-        private readonly IInventoryServices _services;
+        private readonly ISalesServices _services;
 
-        public InventoryController(IInventoryServices inventoryServices)
+        public SalesController(ISalesServices salesServices)
         {
-            _services = inventoryServices;
+            _services = salesServices;
         }
 
         //TODO: FALTA CONFIGURAR MEJOR LOS ENDPOINTS
         [HttpGet]
         public async Task<IActionResult> get()
         {
-            var isInventory = await _services.getAllServices();
+            var isSales = await _services.getAllServices();
 
-            if (isInventory.Item2.IsError)
+            if (isSales.Item2.IsError)
             {
-                return NotFound(isInventory.Item2);
+                return NotFound(isSales.Item2);
             }
 
-            return Ok(isInventory.Item1);
+            return Ok(isSales.Item1);
         }
 
         [HttpGet("{id}")]
@@ -45,33 +46,34 @@ namespace FerreInvetAPI.Controllers.v1
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(SaveInventoryDTO saveInventoryDTO)
+        public async Task<IActionResult> Post(SaveSalesDTO saveSalesDTO)
         {
-            await _services.postCreateServices(saveInventoryDTO);
+            await _services.postCreateServices(saveSalesDTO);
             return NoContent();
         }
 
-        //TODO: NEED DTO
+
         [HttpPut]
-        public async Task<IActionResult> Put(SaveInventoryDTO saveInventoryDTO) 
+        public async Task<IActionResult> Put(SaveSalesDTO saveSalesDTO)
         {
             var error = new ErrorMessageDTO();
 
-            if (saveInventoryDTO == null || saveInventoryDTO.id <= 0)
+            if (saveSalesDTO == null || saveSalesDTO.id <= 0)
             {
                 error.IsError = true;
                 error.ErrorMessage = "not inventory id or inventory data";
                 return BadRequest(error);
             }
-            
-            await _services.putUpdateServices(saveInventoryDTO);
+
+            await _services.putUpdateServices(saveSalesDTO);
             return NoContent();
         }
 
+
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id) 
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null || id <= 0) 
+            if (id == null || id <= 0)
             {
                 return BadRequest();
             }
