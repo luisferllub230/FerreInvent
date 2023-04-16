@@ -17,6 +17,7 @@ namespace Source.Core.Application
             services.AddTransient<IUserServices, UserServices>();
             services.AddTransient<ISalesServices, SalesServices>();
             services.AddTransient<ICustumerServices, CustumerServices>();
+            services.AddTransient<ICategoryService, CategoryService>();
             #endregion
         }
     }
