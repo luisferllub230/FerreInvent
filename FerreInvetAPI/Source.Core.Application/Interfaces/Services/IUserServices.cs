@@ -1,4 +1,5 @@
-﻿using Source.Core.Application.DTO;
+﻿using Source.Core.Application.DTO.ErrorMessage;
+using Source.Core.Application.DTO.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;

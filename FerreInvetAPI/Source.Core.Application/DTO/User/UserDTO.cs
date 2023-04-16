@@ -1,14 +1,15 @@
-﻿using System;
+﻿using Source.Core.Domain.ICommon;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Source.Core.Application.DTO
+namespace Source.Core.Application.DTO.User
 {
-    public class UserDTO
+    public class UserDTO : IdEntityCommon
     {
-        public int Id { get; set; }
+        public int id { get; set; }
         public string name { get; set; }
         public string position { get; set; }
         public string userNickname { get; set; }

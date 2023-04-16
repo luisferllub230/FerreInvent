@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Source.Core.Application.DTO
+namespace Source.Core.Application.DTO.User
 {
     public class UserRegisterDTO
     {

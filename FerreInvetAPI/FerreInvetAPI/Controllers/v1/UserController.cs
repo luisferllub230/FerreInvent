@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Source.Core.Application.DTO;
+using Source.Core.Application.DTO.User;
 using Source.Core.Application.Helpers;
 using Source.Core.Application.Interfaces.Services;
 using Source.Core.Domain.Entities;
