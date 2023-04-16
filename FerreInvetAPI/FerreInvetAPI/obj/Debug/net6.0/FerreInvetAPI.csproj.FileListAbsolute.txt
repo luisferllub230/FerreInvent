@@ -30,6 +30,7 @@ C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\bin\Debug\net6.
 C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -76,4 +77,3 @@ C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\obj\Debug\net6.
 C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\obj\Debug\net6.0\FerreInvetAPI.pdb
 C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\obj\Debug\net6.0\FerreInvetAPI.genruntimeconfig.cache
 C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\obj\Debug\net6.0\ref\FerreInvetAPI.dll
-C:\Users\HP\source\repos\FerreInvent\FerreInvetAPI\FerreInvetAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
